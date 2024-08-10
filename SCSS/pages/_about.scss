@@ -1,0 +1,234 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+%hoverProject {
+  z-index: 100;
+  opacity: 1;
+  cursor: pointer;
+}
+
+main {
+  .container {
+    margin: 3rem 12rem 0 12rem;
+  }
+  .about {
+    display: flex;
+    gap: 50px;
+    line-height: 1.6;
+    .myPhoto {
+      img {
+        width: 350px;
+        border-radius: 10px;
+      }
+    }
+    h2 {
+      font-size: 60px;
+      margin-bottom: 25px;
+      color: $mainColor;
+    }
+    p {
+      font-size: 16px;
+      text-align: justify;
+    }
+    .highLight {
+      font-size: 22px;
+      margin: 25px 0;
+      color: #000;
+    }
+    button {
+      @include StyleButton;
+    }
+  }
+  .date {
+    color: $mainColor;
+    font-size: 22px;
+  }
+  .detail {
+    padding: 10px 50px;
+  }
+  .education,
+  .experience,
+  .allSkills,
+  #services,
+  .projects {
+    margin: 50px 0;
+    line-height: 1.8;
+    h2 {
+      font-size: 50px;
+    }
+  }
+  .skills {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px 10px;
+    div {
+      min-width: 340px;
+    }
+    ul {
+      list-style: none;
+    }
+  }
+  h3 {
+    color: $mainColor;
+  }
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    grid-gap: 30px;
+    margin-top: 50px;
+    div {
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: $mainParagraphColor 0px 0px 3px 0px;
+      transition: $basicTransition;
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: $mainColor 0px 0px 5px 0px;
+      }
+    }
+    img {
+      max-width: 70px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .work {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 15px 5px;
+    background-color: #fff;
+    transition: $basicTransition;
+    box-shadow: $mainColor 0px 0px 5px 0px;
+    z-index: 0;
+    &:hover {
+      box-shadow: $mainColor 0px 0px 5px 0px;
+      transform: scale(1.05);
+      @extend %hoverProject;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    p {
+      font-size: 14px;
+    }
+    button {
+      border: 1px solid $mainParagraphColor;
+      background-color: #fff;
+      padding: 5px 10px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+  }
+  .work-list {
+    display: flex;
+    position: relative;
+  }
+  .one {
+    left: 120px;
+    opacity: 0.5;
+  }
+  .two {
+    left: 60px;
+    opacity: 0.9;
+  }
+  .three {
+    left: 350px;
+    opacity: 0.5;
+  }
+  .four {
+    right: 60px;
+    opacity: 0.9;
+  }
+  .five {
+    right: 450px;
+  }
+  .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    text-decoration: none;
+    color: $mainParagraphColor;
+    cursor: pointer;
+    font-size: 20px;
+    transition: $basicTransition;
+    &:hover {
+      transform: scale(1.3);
+      color: $mainColor;
+    }
+  }
+}
+
+@include BreakPointsScreen("medium") {
+  .container {
+    margin: 100px 50px !important;
+  }
+  .about {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      content: url("../../assets/images/me.png");
+      width: 300px !important;
+    }
+  }
+  .work {
+    opacity: 1 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 10px;
+  }
+  p {
+    font-size: 16px !important;
+  }
+}
+
+@include BreakPointsScreen("small") {
+  .container {
+    margin: 100px 50px !important;
+  }
+  .services-list {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .work {
+    opacity: 1 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 10px;
+  }
+  .work-list {
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    .work {
+      width: 340px;
+    }
+    .work img {
+      width: 350px;
+    }
+  }
+  h2 {
+    font-size: 35px !important;
+  }
+}
+
+@include BreakPointsScreen("smallMobile") {
+  .container {
+    margin: 50px 10px !important;
+  }
+  h2 {
+    font-size: 25px !important;
+  }
+}

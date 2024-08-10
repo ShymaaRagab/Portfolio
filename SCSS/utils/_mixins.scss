@@ -1,0 +1,45 @@
+@use "../utils/variables" as *;
+
+@mixin CenterByFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin StyleButton {
+  border: #000 1px solid;
+  border-radius: 2px;
+  padding: 10px 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: $basicTransition;
+  font-size: 20px;
+  margin: 30px 0;
+  &:hover {
+    background-color: $darkColor;
+    color: #fff;
+  }
+}
+
+@mixin BreakPointsScreen($point) {
+  @if $point == smallMobile {
+    @media only screen and (max-width: 376px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media only screen and  (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+}

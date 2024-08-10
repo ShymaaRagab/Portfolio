@@ -1,0 +1,90 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.shortStart {
+  h1 {
+    font-size: 70px;
+    margin-bottom: 10px;
+    color: $mainColor;
+  }
+  p {
+    margin: 10px 5px 4rem;
+  }
+}
+.mainContact {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  .image {
+    width: 35%;
+  }
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  #form {
+    width: 50%;
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  input,
+  textarea {
+    padding: 15px 20px;
+    border: 1px solid hsl(231, 7%, 60%);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+  }
+  input[type="submit"] {
+    @include StyleButton;
+  }
+  #name-error,
+  #email-error,
+  #subject-error,
+  #message-error {
+    position: absolute;
+    top: 0;
+    color: hsl(4, 100%, 67%);
+    right: 0;
+    font-weight: 700;
+  }
+}
+
+@include BreakPointsScreen("medium") {
+  .mainContact {
+    flex-direction: column;
+    justify-content: center;
+    .image {
+      max-width: 500px;
+      img {
+        box-shadow: #debd81 20px 20px 1px 5px;
+      }
+    }
+    #form,.image {
+      width: 100%;
+    }
+  }
+  .shortStart {
+    h1,
+    p {
+      text-align: center;
+    }
+  }
+}
+@include BreakPointsScreen("medium"){
+  .shortStart {
+    h1 {
+      font-size: 35px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+}
+// info.round2@depi.gov.eg

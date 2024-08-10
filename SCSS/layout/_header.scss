@@ -1,0 +1,66 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+header {
+  background-color: transparent;
+  position: sticky;
+  display: flex;
+  padding: 15px 6rem;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 1000;
+  .logo {
+    font-size: 30px;
+    color: $darkColor;
+    padding: 2px;
+    box-shadow: #f7daa5 -2px 0px 1px 1px;
+    span {
+      margin-left: -25px;
+      text-shadow: $mainParagraphColor 6px 4px 2px;
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      font-size: 20px;
+      a {
+        text-decoration: none;
+        transition: $basicTransition;
+        color: $mainParagraphColor;
+        cursor: pointer;
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+
+@include BreakPointsScreen("mobile") {
+  header {
+    padding: 15px 2rem;
+  }
+}
+@include BreakPointsScreen("smallMobile") {
+  header {
+    position: relative;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    nav {
+      ul {
+        justify-content: space-between;
+        gap: 50px;
+        li {
+          margin: 0 10px 20px 0;
+          transition: $basicTransition;
+        }
+      }
+    }
+  }
+  .active{
+    margin-top: 40px;
+  }
+}

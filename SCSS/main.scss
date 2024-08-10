@@ -1,0 +1,18 @@
+// Importing base styles
+@import "./base/base";
+
+// Importing layout styles
+@import "./layout/footer";
+@import "./layout/header";
+
+// Importing page-specific styles
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/projects";
+
+// Importing Theme Style
+@import "./theme/themeDark";
+
+// Importing utility styles
+@import "./utils/mixins";
+@import "./utils/variables";

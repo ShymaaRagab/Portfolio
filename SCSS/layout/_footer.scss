@@ -1,0 +1,98 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+footer {
+  padding: 3rem 10rem;
+  margin-top: 5rem;
+  position: relative;
+  line-height: 1.5;
+  .contactFooter {
+    position: relative;
+    margin-bottom: 100px;
+    &::before {
+      content: "";
+      border-top: 5px solid #000;
+      width: 100%;
+      position: absolute;
+      top: -20px;
+    }
+    display: flex;
+    justify-content: space-between;
+    .connect,
+    .contact {
+      display: flex;
+      flex-direction: column;
+    }
+    h5{
+      font-size: 20px;
+    }
+  }
+  .forContactPage {
+    justify-content: flex-start;
+    gap: 100px;
+  }
+  a {
+    text-decoration: none;
+    color: $mainParagraphColor;
+    cursor: pointer;
+    transition: $basicTransition;
+    &:hover {
+      color: $mainColor;
+    }
+  }
+  button {
+    padding: 20px 30px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: $basicTransition;
+    &:hover {
+      background-color: #656565;
+    }
+  }
+
+  .fixedFooter {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px 5px;
+    background-color: #fff;
+    box-shadow: #656565 2px 2px 5px 0px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    img {
+      width: 25px;
+      height: 25px;
+      margin-right: 20px;
+      &:hover {
+        opacity: 60%;
+      }
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+@include BreakPointsScreen("small"){
+  footer{
+    padding: 3rem;
+  }
+}
+@include BreakPointsScreen("mobile"){
+  .fixedFooter,.contactFooter{
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+@include BreakPointsScreen("smallMobile"){
+  footer{
+    padding: 3rem 1rem;
+  }
+  .fixedFooter{
+    padding: 10px 10px 5px !important;
+  }
+}
