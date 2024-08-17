@@ -434,7 +434,7 @@ main .more:hover {
             align-items: center;
   }
   .about img {
-    content: url("../../assets/images/me.png");
+    content: url("../assets/images/me.png");
     width: 300px !important;
   }
   .work {
@@ -691,7 +691,8 @@ main .more:hover {
 .darkMode .work {
   background-color: #323232;
 }
-.darkMode button, .darkMode a {
+.darkMode button,
+.darkMode a {
   color: #a3a3a3;
 }
 .darkMode:not(h3):not(h1):not(.logo):not(.active) {
@@ -699,6 +700,7 @@ main .more:hover {
 }
 
 #theme {
+  z-index: 10000;
   position: fixed;
   right: 5px;
   bottom: 50px;

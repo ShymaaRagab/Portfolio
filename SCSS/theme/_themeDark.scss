@@ -1,33 +1,35 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 
-.darkMode{
-	background-color: #323232;
-	h2{
-		color: #f3f3f3;
-	}
-	label{
-		color: #f3f3f3;
-	}
-	.fixedFooter{
-		background-color: #212121;
-	}
-	.work{
-		background-color: #323232;
-	}
-	button,a{
-		color: #a3a3a3;
-	}
-	&:not(h3):not(h1):not(.logo):not(.active) {
-		color: inherit;
-	}
+.darkMode {
+  background-color: #323232;
+  h2 {
+    color: #f3f3f3;
+  }
+  label {
+    color: #f3f3f3;
+  }
+  .fixedFooter {
+    background-color: #212121;
+  }
+  .work {
+    background-color: #323232;
+  }
+  button,
+  a {
+    color: #a3a3a3;
+  }
+  &:not(h3):not(h1):not(.logo):not(.active) {
+    color: inherit;
+  }
 }
 
-#theme{
-	position: fixed;
+#theme {
+  z-index: 10000;
+  position: fixed;
   right: 5px;
   bottom: 50px;
-  background : $mainParagraphColor;
+  background: $mainParagraphColor;
   border: none;
   display: flex;
   flex-direction: column;
@@ -35,7 +37,7 @@
   padding: 10px 0px;
   cursor: pointer;
   transition: all 0.3s linear;
-  img{
+  img {
     width: 30px;
   }
   .close {
@@ -47,13 +49,13 @@
     border-radius: 10px;
     transition: all 0.3s linear;
   }
-  .darkMode-active{
+  .darkMode-active {
     top: 0 !important;
   }
 }
 
-@include BreakPointsScreen("small"){
-  #theme{
+@include BreakPointsScreen("small") {
+  #theme {
     bottom: 115px;
   }
 }
